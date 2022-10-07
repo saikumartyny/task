@@ -50,10 +50,10 @@ const Spells = () => {
         <Oval
           height={80}
           width={80}
-          color="#ff9999"
+          color="gray"
           visible={true}
           ariaLabel="oval-loading"
-          secondaryColor="#ffb3b3"
+          secondaryColor="lightgray"
           strokeWidth={2}
           strokeWidthSecondary={2}
         />
@@ -81,9 +81,11 @@ const Spells = () => {
         spinnerRender()
       ) : (
         <div className="main-container">
-          <Link className="link" to="/favourites" state={favourites}>
-            <h1 className="text-style">Go to Favourites</h1>
-          </Link>
+          <div className="btn-box">
+            <Link className="link" to="/favourites" state={favourites}>
+              <button className="text-style">Go to Favourites ►</button>
+            </Link>
+          </div>
 
           <Table responsive>
             <thead>

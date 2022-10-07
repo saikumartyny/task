@@ -10,9 +10,9 @@ const Favourites = () => {
 
   return (
     <div className="main-container">
-      <h1 className="text-style fa">Favourites</h1>
+      <h1 className="">Favourites</h1>
       <Link className="link" to="/">
-        <h1 className="text-style">Back to Home</h1>
+        <button className="text-style">◄ Back to Home</button>
       </Link>
       {filteredData === undefined ? (
         <>

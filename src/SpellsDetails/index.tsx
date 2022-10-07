@@ -40,12 +40,10 @@ const SpellsDetails = () => {
         <Oval
           height={80}
           width={80}
-          color="#494d4b"
-          wrapperStyle={{}}
-          wrapperClass=""
+          color="gray"
           visible={true}
           ariaLabel="oval-loading"
-          secondaryColor="#6f7371"
+          secondaryColor="lightgray"
           strokeWidth={2}
           strokeWidthSecondary={2}
         />
