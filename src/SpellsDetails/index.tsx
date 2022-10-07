@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 import { GettingDataType } from "../Spells/types";
 
@@ -8,8 +7,6 @@ import { Oval } from "react-loader-spinner";
 const SpellsDetails = () => {
   const [data, setData] = useState<GettingDataType>();
   const [spinner, setSpinner] = useState<Boolean>(false);
-
-  const location = useLocation();
 
   useEffect(() => {
     const path = window.location.pathname.split("/")[1].split("-");
