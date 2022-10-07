@@ -50,10 +50,10 @@ const Spells = () => {
         <Oval
           height={80}
           width={80}
-          color="#494d4b"
+          color="#ff9999"
           visible={true}
           ariaLabel="oval-loading"
-          secondaryColor="#6f7371"
+          secondaryColor="#ffb3b3"
           strokeWidth={2}
           strokeWidthSecondary={2}
         />

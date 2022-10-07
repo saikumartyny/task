@@ -44,7 +44,7 @@ tr {
 }
 
 .link {
-  all: unset;
+  text-decoration: none;
 }
 
 .text-style {
@@ -57,4 +57,10 @@ tr {
 
 .fa {
   text-align: center;
+}
+
+@media screen and (max-width: 576px) {
+  table {
+    width: 100vw;
+  }
 }

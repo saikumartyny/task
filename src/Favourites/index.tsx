@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { ResultsType } from "../Spells/types";
 
 const Favourites = () => {
@@ -11,8 +11,13 @@ const Favourites = () => {
   return (
     <div className="main-container">
       <h1 className="text-style fa">Favourites</h1>
+      <Link className="link" to="/">
+        <h1 className="text-style">Back to Home</h1>
+      </Link>
       {filteredData === undefined ? (
-        <h1>No favourites</h1>
+        <>
+          <h1>No favourites</h1>
+        </>
       ) : (
         <table>
           <thead>
