@@ -13,7 +13,6 @@ const SpellsDetails = () => {
 
   useEffect(() => {
     const path = window.location.pathname.split("/")[1].split("-");
-    console.log(path);
 
     const gettingDataCall = async () => {
       let url = null;
