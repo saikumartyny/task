@@ -1,6 +1,5 @@
 .main-container {
   min-height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,12 +8,17 @@
 }
 
 table {
-  width: 80%;
+  width: 80vw;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
 }
 
 table,
 td {
-  border: 1px solid #333;
+  border: none;
 }
 
 thead,
@@ -25,6 +29,10 @@ tfoot {
 
 tr:hover {
   background-color: #ffb3b3;
+}
+
+tr {
+  height: 40px;
 }
 
 .loader-container {

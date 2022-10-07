@@ -6,6 +6,8 @@ import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 import { GettingDataType, ResultsType } from "./types";
 
+import Table from "react-bootstrap/Table";
+
 import "./styles.css";
 
 const Spells = () => {
@@ -82,7 +84,8 @@ const Spells = () => {
           <Link className="link" to="/favourites" state={favourites}>
             <h1 className="text-style">Go to Favourites</h1>
           </Link>
-          <table>
+
+          <Table responsive>
             <thead>
               <tr>
                 <th>Index</th>
@@ -116,7 +119,7 @@ const Spells = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </Table>
         </div>
       )}
     </>

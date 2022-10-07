@@ -4,33 +4,35 @@ import { ResultsType } from "../Spells/types";
 const Favourites = () => {
   const location = useLocation();
 
+  const filteredData = location.state?.results?.filter(
+    (each: ResultsType) => each.isFavourite === true
+  );
+
   return (
     <div className="main-container">
       <h1 className="text-style fa">Favourites</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Index</th>
-            <th>Name</th>
-            <th>URL</th>
-          </tr>
-        </thead>
-        <tbody>
-          {location.state?.results?.map(
-            (eachItem: ResultsType, index: number) => {
-              if (eachItem.isFavourite) {
-                return (
-                  <tr key={index}>
-                    <td>{eachItem.index}</td>
-                    <td>{eachItem.name}</td>
-                    <td>{eachItem.url}</td>
-                  </tr>
-                );
-              }
-            }
-          )}
-        </tbody>
-      </table>
+      {filteredData === undefined ? (
+        <h1>No favourites</h1>
+      ) : (
+        <table>
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Name</th>
+              <th>URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredData?.map((eachItem: ResultsType, index: number) => (
+              <tr key={index}>
+                <td>{eachItem.index}</td>
+                <td>{eachItem.name}</td>
+                <td>{eachItem.url}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
