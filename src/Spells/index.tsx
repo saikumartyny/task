@@ -11,7 +11,7 @@ import Table from "react-bootstrap/Table";
 import "./styles.css";
 
 const Spells = () => {
-  const [apiData, setApiData] = useState<GettingDataType>();
+  const [apiData, setApiData] = useState<GettingDataType>(); //this is array?
   const [spinner, setSpinner] = useState<Boolean>(false);
   const [favourites, setFavourites] = useState<GettingDataType>();
 
