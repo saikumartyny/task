@@ -30,12 +30,12 @@ const Spells = () => {
       isFavourite: false,
     },
   ]);
-  console.log(favourites?.length);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const gettingDataCall = async () => {
+      //getting data
       const url = "https://www.dnd5eapi.co/api/spells";
       const response = await fetch(url, {
         method: "GET",
@@ -59,7 +59,7 @@ const Spells = () => {
     gettingDataCall();
   }, []);
 
-  const closeModal = () => setPopup(false);
+  const close = () => setPopup(false); //close the favourites
 
   const Favourites = () => {
     return (
@@ -105,6 +105,7 @@ const Spells = () => {
   };
 
   const onClickFavourite = (id: string | undefined) => {
+    //click to favourite and unfavourite
     const updatedData = {
       count: apiData?.count,
       results: apiData?.results?.map((eachItem: ResultsType) => {
@@ -139,7 +140,7 @@ const Spells = () => {
           >
             Favourites List ►
           </button>
-          <Popup onClose={closeModal} open={popup} position="bottom right">
+          <Popup onClose={close} open={popup} position="bottom right">
             <Favourites />
           </Popup>
         </div>
