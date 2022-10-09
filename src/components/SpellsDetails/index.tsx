@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { GettingDataType } from "../Spells/types";
 
+import { useNavigate } from "react-router-dom";
+
 import { Oval } from "react-loader-spinner";
 
 import "./styles.css";
@@ -9,6 +11,8 @@ import "./styles.css";
 const SpellsDetails = () => {
   const [data, setData] = useState<GettingDataType>();
   const [spinner, setSpinner] = useState<Boolean>(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const path = window.location.pathname.split("/")[1].split("-");
@@ -60,6 +64,13 @@ const SpellsDetails = () => {
       ) : (
         <div data-testid="table-div" className="main-container">
           <h1 className="header">Spell Details</h1>
+          <button
+            onClick={() => navigate("/")}
+            className="text-style"
+            type="button"
+          >
+            ◄ Back to Home
+          </button>
           <div className="spell-detail">
             <div className="left">
               <span>Index</span>

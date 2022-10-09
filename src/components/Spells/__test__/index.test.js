@@ -3,7 +3,7 @@ import Spells from "../index";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-it("render the header", async () => {
+it("test case for render the header", async () => {
   render(
     <Router>
       <Spells />
@@ -13,7 +13,7 @@ it("render the header", async () => {
   expect(tableElement).toBeInTheDocument();
 });
 
-it("renders table header", async () => {
+it("test case for renders table header", async () => {
   render(
     <Router>
       <Spells />
@@ -23,7 +23,7 @@ it("renders table header", async () => {
   expect(tableHeaderElement).toBeInTheDocument();
 });
 
-it("renders button", async () => {
+it("test case for favourite renders button", async () => {
   render(
     <Router>
       <Spells />
@@ -33,7 +33,7 @@ it("renders button", async () => {
   expect(buttonElement).toBeInTheDocument();
 });
 
-it("renders table row", async () => {
+it("test case for renders table row", async () => {
   render(
     <Router>
       <Spells />
@@ -43,7 +43,7 @@ it("renders table row", async () => {
   expect(rowElement).toBeInTheDocument();
 });
 
-it("check items", async () => {
+it("test case for adding and removing the favourites", async () => {
   render(
     <Router>
       <Spells />
