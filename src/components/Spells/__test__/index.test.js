@@ -43,7 +43,7 @@ it("renders table row", async () => {
   expect(rowElement).toBeInTheDocument();
 });
 
-it("small container visible only when val is true", async () => {
+it("check items", async () => {
   render(
     <Router>
       <Spells />
@@ -53,4 +53,6 @@ it("small container visible only when val is true", async () => {
   fireEvent.click(clickButton);
   const favContainer = screen.queryByTestId("fav-container");
   expect(favContainer).toBeInTheDocument();
+  fireEvent.click(clickButton);
+  expect(favContainer).not.toBeInTheDocument();
 });
