@@ -4,6 +4,8 @@ import { GettingDataType } from "../Spells/types";
 
 import { Oval } from "react-loader-spinner";
 
+import "./styles.css";
+
 const SpellsDetails = () => {
   const [data, setData] = useState<GettingDataType>();
   const [spinner, setSpinner] = useState<Boolean>(false);
@@ -56,25 +58,20 @@ const SpellsDetails = () => {
       {spinner ? (
         spinnerRender()
       ) : (
-        <div className="main-container">
-          <table>
-            <thead>
-              <tr>
-                <th>index</th>
-                <th>name</th>
-                <th>url</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data?.results?.map((eachItem) => (
-                <tr>
-                  <td>{eachItem.index}</td>
-                  <td>{eachItem.name}</td>
-                  <td>{eachItem.url}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div data-testid="table-div" className="main-container">
+          <h1 className="header">Spell Details</h1>
+          <div className="spell-detail">
+            <div className="left">
+              <span>Index</span>
+              <span>Name</span>
+              <span>URL</span>
+            </div>
+            <div data-testid="header" className="right">
+              <span>{data?.results?.[0].index}</span>
+              <span>{data?.results?.[0].name}</span>
+              <span>{data?.results?.[0].url}</span>
+            </div>
+          </div>
         </div>
       )}
     </>
