@@ -15,7 +15,8 @@ const SpellsDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const path = window.location.pathname.split("/")[1].split("-"); // getting path
+    // getting the each spell path
+    const path = window.location.pathname.split("/")[1].split("-");
 
     const gettingDataCall = async () => {
       let url = null;
@@ -36,10 +37,12 @@ const SpellsDetails = () => {
       }
     };
 
-    gettingDataCall(); //calling api
+    //calling the each spell data api.
+    gettingDataCall();
     setSpinner(true);
   }, []);
 
+  //spinner
   const spinnerRender = () => {
     return (
       <div className="loader-container">

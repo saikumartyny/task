@@ -10,6 +10,7 @@ import Popup from "reactjs-popup";
 import "./styles.css";
 
 const Spells = () => {
+  //maintain the state for spells
   const [apiData, setApiData] = useState<GettingDataType>({
     count: 0,
     results: [
@@ -34,8 +35,8 @@ const Spells = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    //getting spells data from the api
     const gettingDataCall = async () => {
-      //getting data
       const url = "https://www.dnd5eapi.co/api/spells";
       const response = await fetch(url, {
         method: "GET",
@@ -59,7 +60,8 @@ const Spells = () => {
     gettingDataCall();
   }, []);
 
-  const close = () => setPopup(false); //close the favourites
+  //click to close the favourites component
+  const close = () => setPopup(false);
 
   const Favourites = () => {
     return (
@@ -104,8 +106,8 @@ const Spells = () => {
     );
   };
 
+  //click favourite button to favourite and unfavourite the spells
   const onClickFavourite = (id: string | undefined) => {
-    //click to favourite and unfavourite
     const updatedData = {
       count: apiData?.count,
       results: apiData?.results?.map((eachItem: ResultsType) => {
@@ -119,6 +121,7 @@ const Spells = () => {
   };
 
   useEffect(() => {
+    //If the isFavourite is 'true', then the spell is added to the favourites list.
     const filteredData = apiData?.results?.filter(
       (each: ResultsType) => each.isFavourite === true
     );
